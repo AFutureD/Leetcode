@@ -65,7 +65,7 @@
 3. 测试
 
    ```bash
-   >./engine test [filename]
+   > ./engine test [filename]
    
    # 实际执行代码
    > g++ $filename 0_pre.o -std=c++11 -o main; ./main

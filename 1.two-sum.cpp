@@ -18,22 +18,22 @@
 
 class Solution {
 public:
-	vector<int> twoSum(vector<int>& nums, int target) {
-		unordered_map<int, int> m;
-		for (int i = 0; i < nums.size(); i++) {
-			int t = target - nums[i];
-			if (m.count(t)) return { m[t], i };
-			m[nums[i]] = i;
-		}
-		return {};
-	}
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> m;  // hashtable search t with o(1).
+        for (int i = 0; i < nums.size(); i++) {
+            int t = target - nums[i];
+            if (m.count(t)) return { m[t], i };
+            m[nums[i]] = i;
+        }
+        return {};
+    }
 };
 
- int main() {
- 	Solution s;
- 	decay<vector<int>&>::type p0 = {19,22,11};
- 	decay<int>::type p1 = 33;
- 	auto res = s.twoSum(p0,p1);
- 	cout << res << endl;
- 	return 0;
- }
+int main() {
+    Solution s;
+    decay<vector<int>&>::type p0 = {19,22,11};
+    decay<int>::type p1 = 33;
+    auto res = s.twoSum(p0,p1);
+    cout << res << endl;
+    return 0;
+}
