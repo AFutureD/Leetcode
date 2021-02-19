@@ -8,6 +8,10 @@ function test() {
 }
 
 function new() {
+	if [ ! -n "$parameter" ] ;then
+		parameter=$(leetcode list -q DeL | tail -n 1 | sed 's/.*\[\([^]]*\)].*/\1/')
+	fi
+	
 	leetcode show -gx -l cpp $parameter
 }
 

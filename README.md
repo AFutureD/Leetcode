@@ -4,13 +4,15 @@
 
 1. vscode 安装 leetcode 插件
 
-2. 安装 [leetcode-cli](https://github.com/skygragon/leetcode-cli)
+2. 添加 `leetcode` 到 `bin`
 
-    `npm install -g leetcode-cli`
+   `ln -s ~/.vscode/extensions/leetcode.vscode-leetcode-0.17.0/node_modules/vsc-leetcode-cli/bin/leetcode /usr/local/bin/leetcode`
 
 3. 修改 template
 
-    `open /usr/local/lib/node_modules/leetcode-cli/templates/detailed.tpl`
+    `open ~/.vscode/extensions/leetcode.vscode-leetcode-0.17.0/node_modules/vsc-leetcode-cli/templates/codeonly.tpl`
+    
+   `open ~/.vscode/extensions/leetcode.vscode-leetcode-0.17.0/node_modules/vsc-leetcode-cli/templates/detailed.tpl`
 
     ``` js
     ${comment.start}
@@ -33,7 +35,30 @@
     ${code}
     ```
 
-4. 编写脚本
+4. 修改配置文件
+
+   vscode 配置文件 `open ~/Library/Application Support/Code/User/settings.json`
+
+   ```
+   "leetcode.filePath": {
+        "default": {
+            "folder": "",
+            "filename": "${id}.${ext}"
+        }
+   }
+   ```
+
+   leetcode-cli 配置文件 `open ~/.lc/config.json`
+
+   ```
+   {
+      "file": {
+         "show": "${fid}"
+      }
+   }
+   ```
+
+5. 编写脚本
 
     见文件[`engine`](.engine)
 
