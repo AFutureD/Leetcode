@@ -31,8 +31,8 @@ public:
 
 int main() {
     Solution s;
-    decay<vector<int>&>::type p0 = {19,22,11};
-    decay<int>::type p1 = 33;
+    vector<int> p0 = {19,22,11};
+    int p1 = 33;
     auto res = s.twoSum(p0,p1);
     cout << res << endl;
     return 0;
