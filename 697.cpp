@@ -20,7 +20,7 @@
 class Solution {
 public:
     int findShortestSubArray(vector<int>& nums) {
-        map<int, pair<int, int> > m;
+        map<int, pair<int, int> > m; // pair.first: cnt; pair.second: first pos;
         int cnt = 0, ans = 999999;
         for(int i = 0; i < nums.size(); i++){
             int cur =  nums[i];
